@@ -10,4 +10,6 @@
     <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
+
+    <link rel="shortcut icon" href="../assets/dist/img/AdminLTELogo.png">
 </head>

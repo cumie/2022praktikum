@@ -1,3 +1,11 @@
+<?php 
+    if ($_GET['page'] == "lokasiread") {
+        $open = "menu-open";
+        $activeLokasi = "active";
+    } elseif ($_GET['page'] == "home") {
+        $activeHome = "active";
+    }
+?> 
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#4d4338">
     <a href="#" class="brand-link">
         <img src="../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -16,15 +24,15 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="?page=home" class="nav-link active">
+                    <a href="?page=home" class="nav-link <?php echo $activeHome ?>">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Home
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item <?php echo $open ?>">
+                    <a href="#" class="nav-link <?php echo $activeLokasi ?>">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Master Data
@@ -33,7 +41,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="?page=lokasiread" class="nav-link <?php echo $activeLokasi ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Lokasi</p>
                             </a>
