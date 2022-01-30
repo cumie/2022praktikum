@@ -8,7 +8,7 @@ class Database {
         $this->host = "localhost";
         $this->username = "lava";
         $this->password = "linolee";
-        $this->db_name = "praktikum_presensi_penggajian";
+        $this->db_name = "master";
     }
 
     public function getConnection()
