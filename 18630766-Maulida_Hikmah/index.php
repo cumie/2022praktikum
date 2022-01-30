@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once ("partials/head.php") ?>
+<?php
+require_once ("partials/head.php");
+require_once ("database/database.php");
+ ?>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php 
@@ -15,9 +18,5 @@
         require_once ("partials/footer.php");
         ?>
     </div>
-
-
-
-
 </body>
 </html>
