@@ -38,4 +38,4 @@
         </div>
     </div>
 </section>
-<?php require_once ("partials/script.php") ?>
+<!-- tidak perlu import script.js -->
