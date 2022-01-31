@@ -14,7 +14,7 @@ class Database
         $this->username = 'root';
         $this->password = '';
         // $this->db_name = 'db_k_presensi';
-        $this->db_name  = 'uniska_praktikum_presensi_penggajian';
+        $this->db_name  = 'praktikum_presensi_penggajian';
     }
 
     public function getConnection()

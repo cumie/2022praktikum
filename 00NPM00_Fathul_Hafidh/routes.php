@@ -4,13 +4,14 @@ $page = $_GET['page'];
 switch($page) {
     case '':
         case 'home':
-            file_exists('pages/home.php') ? include 'page/home.php' : include 'pages/404.php';
+            file_exists('pages/home.php') ? include 'pages/home.php' : include 'pages/404.php';
+            break; 
+        case 'lokasiread':
+            file_exists('pages/admin/lokasi/lokasiread.php') ? include 'pages/admin/lokasi/lokasiread.php' : include 'pages/404.php';
             break;
-            default:
+        default:
             include 'pages/404.php';
 }
 } else {
     include 'pages/home.php';
 }
-
-?>
