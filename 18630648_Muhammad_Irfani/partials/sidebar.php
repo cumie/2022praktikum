@@ -34,7 +34,7 @@ img-circle elevation-3" style="opacity: .8">
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="?page=lokasiread" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lokasi</p>
               </a>
@@ -62,4 +62,4 @@ img-circle elevation-3" style="opacity: .8">
       </ul>
     </nav>
   </div>
-</aside>
+</aside>?page=lokasiread
