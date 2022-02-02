@@ -52,7 +52,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="?page=bagianread" class="nav-link">
                                  <i class="nav-icon far fa-circle"></i>
                                  <p>Bagian</p>
                              </a>
