@@ -11,7 +11,41 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     $row = $stmt->fetch();
     if (isset($row['id'])) {
+        if (isset($_POST['button_update'])) {
+
+            $database = new Database();
+            $db = $database->getConnection();
+
+            $validateSQL = "SELECT * FROM lokasi where nama_lokasi=? AND id != ?";
+            $stmt = $db->prepare($validateSQL);
+            $stmt->bindParam(1, $_POST['nama_lokasi']);
+            $stmt->bindParam(2, $_POST['id']);
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
 ?>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <h5><i class="icon fas-ban"></i> Gagal</h5>
+                    Nama Lokasi Sudah Ada
+                </div>
+        <?php
+            } else {
+                $updateSQL = "UPDATE lokasi SET nama_lokasi = ? WHERE id=?";
+                $stmt = $db->prepare($updateSQL);
+                $stmt->bindParam(1, $_POST['nama_lokasi']);
+                $stmt->bindParam(2, $_POST['id']);
+                if ($stmt->execute()) {
+                    $_SESSION['hasil'] = true;
+                    $_SESSION['pesan'] = "Berhasil Simpan Data";
+                } else {
+                    $_SESSION['hasil'] = true;
+                    $_SESSION['pesan'] = "Gagal Simpan Data";
+                }
+                echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
+            }
+        }
+        ?>
+
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -50,7 +84,7 @@ if (isset($_GET['id'])) {
                         <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right">
                             <i class="fa fa-times"></i> Batal
                         </a>
-                        <button type="submit" name="button_create" class="btn btn-success btn-sm float-right">
+                        <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
                             <i class="fa fa-save"></i> Simpan
                         </button>
                     </form>
