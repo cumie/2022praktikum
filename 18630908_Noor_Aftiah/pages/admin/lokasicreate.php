@@ -2,6 +2,7 @@
 if (isset($_POST['button_create'])) {
     $database = new Database();
     $db = $database->getConnection();
+
     $validateSQL = "SELECT * FROM lokasi where nama_lokasi=?";
     $stmt = $db->prepare($validateSQL);
     $stmt->bindParam(1, $_POST['nama_lokasi']);
