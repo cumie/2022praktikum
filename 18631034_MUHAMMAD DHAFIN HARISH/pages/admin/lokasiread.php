@@ -61,7 +61,7 @@
                                 <a href="?page=lokasidelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onClick="javascript: return confirm('Konfirmasi data akan dihapus?');">
                                     <i class="fa fa-trash"></i> Hapus
                                 </a>
-                            </td>   
+                            </td>
                         </tr>
                     <?php
                     }
