@@ -1,3 +1,28 @@
+<?php
+if (isset($_POST['button_create'])) {
+
+    $database = new Database();
+    $db = $database->getconnection();
+
+    $validateSQL = "SELECT * FROM lokasi WHERE nama_lokasi = ?";
+    $stmt = $db->prepare($validateSQL);
+    $stmt->bindParam(1, $_POST['nama_lokasi']);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0){
+?>
+        <div class="alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <h5><i class="icon fas fa-ban"></i> Gagal</h5>
+            Nama lokasi sama sudah ada
+        </div>
+<?php
+        } else {
+        }
+    }
+?>
+
+<section class="content-header">
+
 <?php include_once "partials/scripts.php" ?>
 <section class="content-header">
     <div class="container-fluid">
