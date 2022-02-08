@@ -49,9 +49,10 @@ if (isset($_GET['page'])) {
                 <p>Starter Page</p>
             </a>
         </li>
+        <li class="nav-header">MASTER DATA</li>
         <li class="nav-item">
             <a href="?page=lokasi" class="nav-link <?= $active_menu_lokasi; ?>">
-                <i class="nav-icon fas fa-map-marker"></i>
+                <i class="nav-icon fas fa-map-marker-alt"></i>
                 <p>Lokasi</p>
             </a>
         </li>
@@ -71,6 +72,19 @@ if (isset($_GET['page'])) {
             <a href="?page=karyawan" class="nav-link <?= $active_menu_karyawan; ?>">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Karyawan</p>
+            </a>
+        </li>
+        <li class="nav-header">RELASI DATA</li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-pen-square"></i>
+                <p>Jabatan Karyawan</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-street-view"></i>
+                <p>Bagian Karyawan</p>
             </a>
         </li>
     </ul>
