@@ -13,10 +13,6 @@ require 'init.php'; ?>
     <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
-
-    <link rel="stylesheet" href="../../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -69,7 +65,7 @@ require 'init.php'; ?>
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+                code by kreatif developer
             </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2021 <a href="#">AdminLTE.io</a>.</strong> All rights
@@ -86,22 +82,6 @@ require 'init.php'; ?>
     <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../assets/dist/js/adminlte.min.js"></script>
-
-    <script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="../../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="../../assets/plugins/datatables-buttons/js/buttons.bootstrap4.js"></script>
-    <script src="../../assets/plugins/datatables-buttons/js/buttons.html5.js"></script>
-    <script src="../../assets/plugins/datatables-buttons/js/buttons.print.js"></script>
-    <script src="../../assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-    <script>
-        $(function() {
-            $('#mytable').DataTable()
-        });
-    </script>
 </body>
 
 </html>

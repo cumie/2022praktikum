@@ -6,6 +6,16 @@ if (isset($_GET['page'])) {
             include('pages/home.php');
             break;
         case 'lokasi':
+            if (isset($_GET['create']) && $_GET['create'] === 'aktif') {
+                include('pages/lokasi/create.php');
+                break;
+            } elseif (isset($_GET['edit']) && $_GET['edit'] === 'aktif') {
+                include('pages/lokasi/edit.php');
+                break;
+            } elseif (isset($_GET['delete']) && $_GET['delete'] === 'aktif') {
+                include('pages/lokasi/delete.php');
+                break;
+            }
             include('pages/lokasi/index.php');
             break;
         case 'bagian':
