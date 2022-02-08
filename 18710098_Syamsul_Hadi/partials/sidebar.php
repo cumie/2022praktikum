@@ -33,6 +33,11 @@ if (isset($_GET['page'])) {
             $active_menu_karyawan = "";
             break;
     }
+} else {
+    $active_menu_lokasi = "";
+    $active_menu_jabatan = "";
+    $active_menu_bagian = "";
+    $active_menu_karyawan = "";
 };
 ?>
 
