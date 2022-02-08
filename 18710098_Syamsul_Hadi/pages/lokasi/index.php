@@ -1,3 +1,9 @@
+<?php
+require './init.php';
+$DB = DB::getInstance();
+$lokasi_ = $DB->get('lokasi');
+?>
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -33,31 +39,27 @@
                         <th>Opsi</th>
                     </tr>
                 </thead>
-                <?php
-                $database = new Database();
-                $db  = $database->getConnection();
-                $query = "SELECT * FROM lokasi";
-                $stmt = $db->prepare($query);
-                $stmt->execute();
-                $no = 1;
-                ?>
                 <tbody>
-                    <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $row['nama_lokasi']; ?></td>
-                        <td>
-                            <a href="?page=lokasiupdate&id=<?php echo $row['id'] ?>"
-                                class="btn btn-primary btn-sm mr-1">
-                                <i class="fa fa-edit"></i> Ubah
-                            </a>
-                            <a href="?page=lokasidelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm"
-                                onClick="javascript: return confirm('Konfirmasi data akan dihapus?');">
-                                <i class="fa fa-trash"></i> Hapus
-                            </a>
-                        </td>
-                    </tr>
-                    <?php endwhile; ?>
+                    <?php if (count($lokasi_) > 0) : ?>
+                        <?php foreach ($lokasi_ as $key => $lokasi) : ?>
+                            <tr>
+                                <td><?= $key; ?></td>
+                                <td><?= $lokasi->nama_lokasi ?></td>
+                                <td>
+                                    <a href="?page=lokasiupdate&id=<?= $lokasi->id; ?>" class="btn btn-primary btn-sm mr-1">
+                                        <i class="fa fa-edit"></i> Ubah
+                                    </a>
+                                    <a href="?page=lokasidelete&id=<?= $lokasi->id; ?>" class="btn btn-danger btn-sm" onClick="javascript: return confirm('Konfirmasi data akan dihapus?');">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <tr>
+                            <td colspan="3">Data lokasi belum ada.</td>
+                        </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
@@ -66,7 +68,7 @@
 
 <!-- <?php include_once "../2022praktikum/18710098_Syamsul_Hadi/partials/scriptsdatatables.php" ?> -->
 <script>
-$(function() {
-    $('#mytable').DataTable()
-});
+    $(function() {
+        $('#mytable').DataTable()
+    });
 </script>
