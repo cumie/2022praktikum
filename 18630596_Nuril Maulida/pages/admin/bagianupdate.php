@@ -93,8 +93,10 @@ if (isset($_GET['id'])) {
                                 $stmt_karyawan->execute();
 
                                 while ($row_karyawan = $stmt_karyawan->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<option value=\"" . $row_karyawan["id"] . "\">" . $selected . ">" . $row_karyawan["nama_lengkap"] . "</option>";
+                                    $selected = $row_karyawan["id"] == $row["karyawan_id"] ? "selected" : "";
+                                    echo "<option value=\"" . $row_karyawan["id"] . "\"" . $selected . ">" . $row_karyawan["nama_lengkap"] . "</option>";
                                 }
+
                                 ?>
                             </select>
                         </div>
@@ -108,7 +110,8 @@ if (isset($_GET['id'])) {
                                 $stmt_lokasi->execute();
 
                                 while ($row_lokasi = $stmt_lokasi->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "<option value=\"" . $row_lokasi["id"] . "\">" . $selected . ">" . $row_lokasi["nama_lokasi"] . "</option>";
+                                    $selected = $row_lokasi["id"] == $row["lokasi_id"] ? "selected" : "";
+                                    echo "<option value=\"" . $row_lokasi["id"] . "\"" . $selected . ">" . $row_lokasi["nama_lokasi"] . "</option>";
                                 }
                                 ?>
                             </select>

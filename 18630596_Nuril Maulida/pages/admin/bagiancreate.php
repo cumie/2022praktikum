@@ -11,8 +11,7 @@ if (isset($_POST['button_create'])) {
 ?>
         <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <h5><i class="icon fas-ban"></i> Gagal</h5>
-            Nama Jabatan Sudah Ada
+            Nama Bagian Sudah Ada
         </div>
 <?php
     } else {
@@ -72,8 +71,10 @@ if (isset($_POST['button_create'])) {
                         <option value="">--Pilih Kepala Bagian--</option>
                         <?php
 
-                        $selectSQL = "SELECT * FROM karyawan";
-                        $stmt_karyawan = $db->prepare($selectSQL);
+                        $database = new Database();
+                        $db = $database->getConnection();
+                        $selectSql = "SELECT * FROM karyawan";
+                        $stmt_karyawan = $db->prepare($selectSql);
                         $stmt_karyawan->execute();
 
                         while ($row_karyawan = $stmt_karyawan->fetch(PDO::FETCH_ASSOC)) {
@@ -87,8 +88,8 @@ if (isset($_POST['button_create'])) {
                     <select class="form-control" name="lokasi_id">
                         <option value="">--Pilih Lokasi--</option>
                         <?php
-                        $selectSQL = "SELECT * FROM lokasi";
-                        $stmt_lokasi = $db->prepare($selectSQL);
+                        $selectSql = "SELECT * FROM lokasi";
+                        $stmt_lokasi = $db->prepare($selectSql);
                         $stmt_lokasi->execute();
 
                         while ($row_lokasi = $stmt_lokasi->fetch(PDO::FETCH_ASSOC)) {

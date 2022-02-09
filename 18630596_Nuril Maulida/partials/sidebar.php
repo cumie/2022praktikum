@@ -50,7 +50,7 @@
                                  <i class="nav-icon far fa-circle"></i>
                                  <p>Jabatan</p>
                              </a>
-                         </li>
+                         </li>  
                          <li class="nav-item">
                              <a href="?page=bagianread" class="nav-link">
                                  <i class="nav-icon far fa-circle"></i>
@@ -58,8 +58,8 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
-                                 <i class="nav-icon far fa-circle"></i>
+                             <a href="?page=karyawanread" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
                                  <p>Karyawan</p>
                              </a>
                          </li>
