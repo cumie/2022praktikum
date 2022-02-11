@@ -18,11 +18,21 @@ if (isset($_GET['page'])) {
             }
             include('pages/lokasi/index.php');
             break;
+        case 'jabatan':
+            if (isset($_GET['create']) && $_GET['create'] === 'aktif') {
+                include('pages/jabatan/create.php');
+                break;
+            } elseif (isset($_GET['edit']) && $_GET['edit'] === 'aktif') {
+                include('pages/jabatan/edit.php');
+                break;
+            } elseif (isset($_GET['delete']) && $_GET['delete'] === 'aktif') {
+                include('pages/jabatan/delete.php');
+                break;
+            }
+            include('pages/jabatan/index.php');
+            break;
         case 'bagian':
             include('pages/bagian.php');
-            break;
-        case 'jabatan':
-            include('pages/jabatan.php');
             break;
         case 'karyawan':
             include('pages/karyawan.php');
