@@ -4,9 +4,14 @@
         $activeLokasi = "active";
     } elseif ($_GET['page'] == "home") {
         $activeHome = "active";
+    }  elseif ($_GET['page'] == "lokasicreate") {
+        $open = "menu-open";
+        $activeLokasi = "active";
+    }else {
+        $activeHome = "active";
     }
 ?> 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#4d4338">
+<aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#383434">
     <a href="#" class="brand-link">
         <img src="../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
