@@ -11,6 +11,38 @@ if(isset($_GET['id'])){
 
     $row = $result->fetch();
     if(isset($row['id'])){
+        if(isset($_POST['button_update'])){
+            $database = new Database();
+            $db = $database->getConnection();
+
+            $validateSQL = "SELECT * FROM lokasi WHERE nama_lokasi = ? AND id != ?";
+            $result = $db->prepare($validateSQL);
+            $result->bindParam(1, $_POST['nama_lokasi']);
+            $result->bindParam(2, $_POST['id']);
+            $result->execute();
+            if($result->rowCount() > 0){
+            ?>
+                <div class="alert alert-danger alert-dismissable col-3">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <h5><i class="icon fas fa-ban"></i>Gagal</h5>
+                    Nama lokasi sudah terdaftar
+                </div>
+            <?php
+            }else{
+                $updateSQL = "UPDATE lokasi SET nama_lokasi = ? WHERE id = ?";
+                $result = $db->prepare($updateSQL);
+                $result->bindParam(1, $_POST['nama_lokasi']);
+                $result->bindParam(2, $_POST['id']);
+                if($result->execute()){
+                    $_SESSION['hasil'] = true;
+                    $_SESSION['pesan'] = "Berhasil ubah data lokasi";
+                } else {
+                    $_SESSION['hasil'] = false;
+                    $_SESSION['pesan'] = "Gagal ubah data lokasi";
+                }
+                echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
+            }
+        }
 ?>
 <section class="content-header">
     <div class="container-fluid">
@@ -44,7 +76,7 @@ if(isset($_GET['id'])){
                     <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right">
                         <i class="fa fa-times"></i> Batal
                     </a>
-                    <button type="submit" name="button_create" class="btn btn-success btn-sm float-right mr-2">
+                    <button type="submit" name="button_update" class="btn btn-success btn-sm float-right mr-2">
                         <i class="fa fa-save"></i> Simpan
                     </button>
                 </div>
