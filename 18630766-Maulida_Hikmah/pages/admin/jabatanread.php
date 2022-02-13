@@ -42,31 +42,42 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Data Lokasi</h3>
-            <a href="?page=lokasicreate" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus-circle"></i>
+            <a href="?page=jabatancreate" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus-circle"></i>
                 Tambah Data</a>
         </div>
         <div class="card-body">
             <table id="myTable" class="table table-bordered table-hover">
-                <thead>
+                <thead align="center">
                     <tr>
                         <th>No</th>
-                        <th>Nama Lokasi</th>
+                        <th>Nama Jabatan</th>
+                        <th>Gapok</th>
+                        <th>Tunjangan</th>
+                        <th>Uang Makan</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
-                <tfoot>
+                <tfoot align="center">
                     <tr>
                         <th>No</th>
-                        <th>Nama Lokasi</th>
+                        <th>Nama Jabatan</th>
+                        <th>Gapok</th>
+                        <th>Tunjangan</th>
+                        <th>Uang Makan</th>
                         <th>Opsi</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <?php
+                    function rupiah($angka){	
+                        $rupiah = "Rp. " . number_format($angka,2,',','.');
+                        return $rupiah;
+                    }
+                    
                     $database = new Database();
                     $db = $database->getConnection();
 
-                    $sqlLokasi = "SELECT * FROM lokasi";
+                    $sqlLokasi = "SELECT * FROM jabatan";
                     
                     $resultLokasi = $db->prepare($sqlLokasi);
                     $resultLokasi->execute();
@@ -76,13 +87,16 @@
                     ?>
 
                     <tr>
-                        <td><?php echo $no++ ?></td>
-                        <td><?php echo $row['nama_lokasi'] ?></td>
-                        <td>
-                            <a href="?page=lokasiupdate&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
+                        <td align="center"><?php echo $no++ ?></td>
+                        <td><?php echo $row['nama_jabatan'] ?></td>
+                        <td align="right"><?php echo rupiah($row['gapok_jabatan']) ?></td>
+                        <td align="right"><?php echo rupiah($row['tunjangan_jabatan']) ?></td>
+                        <td align="right"><?php echo rupiah($row['uang_makan_perhari']) ?></td>
+                        <td  align="center">
+                            <a href="?page=jabatanupdate&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
                                 <i class="fa fa-edit"></i> Ubah
                             </a>
-                            <a href="?page=lokasidelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onClick="javascript : return confirm('Konfirmasi data akan dihapus?');">
+                            <a href="?page=jabatandelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onClick="javascript : return confirm('Konfirmasi data akan dihapus?');">
                                 <i class="fa fa-trash"></i> Hapus
                             </a>
                         </td>
@@ -97,7 +111,7 @@
 
 <?php
 require_once ("partials/scripts.php");
-require_once ("partials/scriptsdatatables.php")
+require_once ("partials/scriptsdatatables.php");
 ?>
 <script>
     $(function() {

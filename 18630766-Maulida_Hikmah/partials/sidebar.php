@@ -1,16 +1,17 @@
 <?php 
-    if ($_GET['page'] == "lokasiread") {
+    $getP = $_GET['page'];
+
+    if ($getP == "home") {
+        $activeHome = "active";
+    } elseif ($getP == "lokasicreate" OR $getP == "lokasiread" OR $getP == "lokasiupdate") {
         $open = "menu-open";
         $activeLokasi = "active";
-    } elseif ($_GET['page'] == "home") {
-        $activeHome = "active";
-    }  elseif ($_GET['page'] == "lokasicreate") {
+    } elseif ($getP == "jabatanread" OR $getP == "jabatancreate" OR $getP == "jabatanupdate") {
         $open = "menu-open";
-        $activeLokasi = "active";
-    }else {
-        $activeHome = "active";
+        $activeJabatan = "active";
     }
-?> 
+?>
+
 <aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#383434">
     <a href="#" class="brand-link">
         <img src="../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -54,7 +55,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="?page=jabatanread" class="nav-link <?php echo $activeJabatan ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Jabatan</p>
                             </a>
