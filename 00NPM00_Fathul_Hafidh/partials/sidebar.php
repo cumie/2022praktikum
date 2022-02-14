@@ -46,19 +46,19 @@
                </a>
              </li>
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="?page=jabatanread" class="nav-link">
                  <i class="far fa-circle nav-icone"></i>
                  <p>Jabatan</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="?page=bagianread" class="nav-link">
                  <i class="far fa-circle nav-icone"></i>
                  <p>Bagian</p>
                </a>
              </li> 
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="?page=karyawanread" class="nav-link">
                  <i class="far fa-circle nav-icone"></i>
                  <p>Karyawan</p>
                </a>
