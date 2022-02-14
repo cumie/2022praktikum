@@ -7,3 +7,5 @@
 <script src="plugins/datatables-buttons/js/buttons.html5.min.css"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.css"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.css"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
