@@ -9,6 +9,9 @@
     } elseif ($getP == "jabatanread" OR $getP == "jabatancreate" OR $getP == "jabatanupdate") {
         $open = "menu-open";
         $activeJabatan = "active";
+    } elseif ($getP == "bagianread" OR $getP == "bagiancreate" OR $getP == "bagianupdate") {
+        $open = "menu-open";
+        $activeBagian = "active";
     }
 ?>
 
@@ -63,7 +66,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="?page=bagianread" class="nav-link <?php echo $activeBagian ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Bagian</p>
                             </a>
