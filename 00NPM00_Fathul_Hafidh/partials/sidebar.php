@@ -31,6 +31,30 @@
              </p>
            </a>
          </li>
+         <!-- navigasi proses penggajian  -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-money-bill"></i>
+            <p>Penggajian <i class="fas fa-angle-left right"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+          <li class="nav-item">
+               <a href="?page=penggajianrekap" class="nav-link">
+                 <i class="far fa-circle nav-icone"></i>
+                 <p>Rekap Gaji</p>
+               </a>
+             </li>
+ 
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icone">
+                  <p>Riwayat Gaji</p>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </li>
+         <!-- end navigasi penggajian -->
          <li class="nav-item  menu-open">
            <a href="#" class="nav-link">
              <i class="far fas fa-copy"></i>
