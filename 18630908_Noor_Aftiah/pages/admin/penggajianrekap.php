@@ -26,7 +26,7 @@
         ?>
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Lokasi</h1>
+                <h1 class="m-0">Rekapitulasi Penggajian</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -112,6 +112,11 @@
 <?php include_once "partials/scriptsdatatables.php" ?>
 <script>
     $(function() {
-        $('#mytable').DataTable()
+        $('#mytable').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#mytable_wrapper. col-md-6:eq(0)');
     });
 </script>
