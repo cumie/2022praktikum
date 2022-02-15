@@ -77,13 +77,15 @@ if (isset($_GET['id'])) {
                             <input type="hidden" class="form-control" name="id" value="<?php echo $row['id'] ?>">
                             <input type="text" class="form-control" name="nama_lokasi" id="nama_lokasi" value="<?php echo $row['nama_lokasi'] ?>">
                         </div>
-                        <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right ml-3">
-                            <i class="fa fa-times"></i>
-                            Batal
-                        </a>
-                        <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
-                            <i class="fa fa-save"></i>
-                            Simpan
+                        <div class="mt-3">
+                            <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right ml-3">
+                                <i class="fa fa-times"></i>
+                                Batal
+                            </a>
+                            <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
+                                <i class="fa fa-save"></i>
+                                Simpan
+                        </div>
                         </button>
                     </form>
                 </div>

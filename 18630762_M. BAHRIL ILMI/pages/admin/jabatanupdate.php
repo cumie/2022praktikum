@@ -95,14 +95,16 @@ if (isset($_GET['id'])) {
                             <label for="uang_makan_perhari">Uang Makan Perhari</label>
                             <input type="number" class="form-control" name="uang_makan_perhari" id="uang_makan_perhari" value="<?= $row['uang_makan_perhari']; ?>" onkeypress="return (event.charCode > 47 && event.charCode < 58 || event.charCode == 46)">
                         </div>
-                        <a href="?page=jabatanread" class="btn btn-danger btn-sm float-right ml-3">
-                            <i class="fa fa-times"></i>
-                            Batal
-                        </a>
-                        <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
-                            <i class="fa fa-save"></i>
-                            Simpan
-                        </button>
+                        <div class="mt-3">
+                            <a href="?page=jabatanread" class="btn btn-danger btn-sm float-right ml-3">
+                                <i class="fa fa-times"></i>
+                                Batal
+                            </a>
+                            <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
+                                <i class="fa fa-save"></i>
+                                Simpan
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

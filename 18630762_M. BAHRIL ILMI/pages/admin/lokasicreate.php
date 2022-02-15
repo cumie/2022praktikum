@@ -58,14 +58,16 @@ if (isset($_POST['button_create'])) {
                     <label for="nama_lokasi">Nama Lokasi</label>
                     <input type="text" class="form-control" name="nama_lokasi" id="nama_lokasi">
                 </div>
-                <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right ml-3">
-                    <i class="fa fa-times"></i>
-                    Batal
-                </a>
-                <button type="submit" name="button_create" class="btn btn-success btn-sm float-right">
-                    <i class="fa fa-save"></i>
-                    Simpan
-                </button>
+                <div class="mt-3">
+                    <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right ml-3">
+                        <i class="fa fa-times"></i>
+                        Batal
+                    </a>
+                    <button type="submit" name="button_create" class="btn btn-success btn-sm float-right">
+                        <i class="fa fa-save"></i>
+                        Simpan
+                    </button>
+                </div>
             </form>
         </div>
     </div>

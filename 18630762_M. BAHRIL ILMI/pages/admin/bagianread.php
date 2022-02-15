@@ -78,27 +78,24 @@
                     $db = $database->getConnection();
                     $selectSql = "SELECT bagian.id, bagian.nama_bagian, karyawan.nama_lengkap, lokasi.nama_lokasi
                                      FROM bagian
-                                     JOIN karyawan, karyawan.id = bagian.karyawan.id
-                                     JOIN lokasi, lokasi.id = bagian.lokasi.id
-                                     ORDER BY bagian.id, DESC";
+                                     LEFT JOIN karyawan ON karyawan.id = bagian.karyawan_id
+                                     LEFT JOIN lokasi ON lokasi.id = bagian.lokasi_id
+                                     ORDER BY bagian.id DESC";
                     $stmt = $db->prepare($selectSql);
                     $stmt->execute();
                     $no = 1;
-                    var_dump($selectSql);
-                    die;
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $row['nama_jabatan'] ?></td>
-                            <td><?php echo number_format($row['gapok_jabatan']) ?></td>
-                            <td><?php echo number_format($row['tunjangan_jabatan']) ?></td>
-                            <td><?php echo number_format($row['uang_makan_perhari']) ?></td>
+                            <td><?php echo $row['nama_bagian'] ?></td>
+                            <td><?php echo $row['nama_lengkap'] ?></td>
+                            <td><?php echo $row['nama_lokasi'] ?></td>
                             <td>
-                                <a href="?page=jabatanupdate&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
+                                <a href="?page=bagianupdate&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
                                     <i class="fa fa-edit"></i> Ubah
                                 </a>
-                                <a href="?page=jabatandelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onClick="javascript: return confirm('Konfirmasi data akan dihapus?');">
+                                <a href="?page=bagiandelete&id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onClick="javascript: return confirm('Konfirmasi data akan dihapus?');">
                                     <i class="fa fa-trash"></i> Hapus
                                 </a>
                             </td>
