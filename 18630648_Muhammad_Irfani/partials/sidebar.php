@@ -30,6 +30,28 @@
                      </a>
                  <li class="nav-item">
                      <a href="#" class="nav-link">
+                         <i class="fas fa-money-bill nav-icon"></i>
+                         <p>Penggajian
+                             <i class="fas fa-angle-left right"></i>
+                         </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="?page=penggajianrekap" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Rekap Gaji</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon far fa-circle"></i>
+                                 <p>Riwayat Gaji</p>
+                             </a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item">
+                     <a href="#" class="nav-link">
                          <i class="fas fa-copy nav-icon"></i>
                          <p>Master Data
                              <i class="fas fa-angle-left right"></i>
