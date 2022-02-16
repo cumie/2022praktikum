@@ -98,4 +98,4 @@ if (isset($_GET['id'])) {
 } else {
     echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
 }
-?>
+?> 
