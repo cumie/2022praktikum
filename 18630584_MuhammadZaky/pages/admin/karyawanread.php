@@ -96,6 +96,7 @@
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_lengkap'] ?></td>
                             <td>
+
                                 <?php
                                 $bagian_terkini = $row['bagian_terkini'] == "" ? "Belum ada" : $row['bagian_terkini'];
                                 ?>

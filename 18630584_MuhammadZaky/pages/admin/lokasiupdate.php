@@ -74,6 +74,7 @@ if (isset($_GET['id'])) {
                 <div class="card-header">
                     <h3 class="card-title">Ubah Lokasi</h3>
                 </div>
+
                 <div class="card-body">
                     <form method="POST">
                         <div class="form-group">
