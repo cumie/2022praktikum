@@ -34,25 +34,25 @@ img-circle elevation-3" style="opacity: .8">
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="?page=lokasiread" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lokasi</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="?page=jabatanread" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Jabatan</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+              <a href="?page=bagianread" class="nav-link">
+                <i class="nav-icon far fa-circle"></i>
                 <p>Bagian</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="?page=karyawanread" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Karyawan</p>
               </a>
