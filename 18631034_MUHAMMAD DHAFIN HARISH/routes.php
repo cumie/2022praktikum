@@ -48,6 +48,17 @@ if (isset($_GET['page'])) {
         case 'karyawanread':
             file_exists('pages/admin/karyawanread.php') ? include 'pages/admin/karyawanread.php' : include "pages/404.php";
             break;
+        case 'karyawancreate':
+            file_exists('pages/admin/karyawancreate.php') ? include 'pages/admin/karyawancreate.php' : include "pages/404.php";
+            break;
+        case 'karyawanbagian':
+            file_exists('pages/admin/karyawanbagian.php') ? include 'pages/admin/karyawanbagian.php' : include "pages/404.php";
+            break;
+        case 'karyawanjabatan':
+            file_exists('pages/admin/karyawanjabatan.php') ? include 'pages/admin/karyawanjabatan.php' : include "pages/404.php";
+            break;
+        case 'penggajianrekap';
+            file_exists('pages/admin/penggajianrekap.php') ? include 'pages/admin/penggajianrekap.php' : include "pages/404.php";
         default;
             include 'pages/404.php';
     }
