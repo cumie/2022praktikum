@@ -26,7 +26,7 @@
         ?>
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Rekapitulasi penggajian</h1>
+                <h1 class="m-0">Rekapitulasi Penggajian</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -43,8 +43,8 @@
 <div class="content">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Rekap Gaji</h3>
-            <a href="?page=pengganjianrekap" class="btn btn-success btn-sm float-right">
+            <h3 class="card-title">Rekap Gaji</h3>
+            <a href="export/penggajianrekap-pdf.php" class="btn btn-success btn-sm float-right">
                 <i class="fa fa-plus-circle"></i> Export PDF
             </a>
         </div>
@@ -119,6 +119,4 @@
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#mytable_wrapper. col-md-6:eq(0)');
     });
-</script>
-});
 </script>
