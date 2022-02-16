@@ -54,7 +54,7 @@ img-circle elevation-3" style="opacity: .8">
             <li class="nav-item">
               <a href="?page=karyawanread" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Karyawan</p>
+                <p>Karyawan </p>
               </a>
             </li>
           </ul>
