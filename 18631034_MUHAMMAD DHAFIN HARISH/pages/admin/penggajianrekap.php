@@ -75,7 +75,7 @@
                 <tbody>
                     <?php
                     $database = new Database();
-                    $db = $database->getConnection();
+                    $db = $database->getConnection();  
 
                     $selectSql = "SELECT tahun, SUM(P.gapok) jumlah_gapok, SUM(P.tunjangan) jumlah_tunjangan, SUM(P.uang_makan) jumlah_uang_makan, SUM(P.gapok) + SUM(P.tunjangan) + SUM(P.uang_makan) total FROM penggajian P GROUP BY tahun;";
 
