@@ -58,6 +58,9 @@ if (isset($_GET['page'])) {
             file_exists('pages/admin/karyawanjabatan.php') ? include 'pages/admin/karyawanjabatan.php' : include "pages/404.php";
             break;
 
+
+
+
         default:
 
             include "pages/404.php";
