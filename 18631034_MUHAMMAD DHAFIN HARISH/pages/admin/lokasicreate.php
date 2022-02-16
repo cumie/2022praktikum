@@ -1,30 +1,36 @@
 <?php
 if (isset($_POST['button_create'])) {
-
     $database = new Database();
-    $db = $database->getconnection();
+    $db = $database->getConnection();
 
-    $validateSQL = "SELECT * FROM lokasi WHERE nama_lokasi = ?";
+    $validateSQL = "SELECT * FROM lokasi where nama_lokasi=?";
     $stmt = $db->prepare($validateSQL);
     $stmt->bindParam(1, $_POST['nama_lokasi']);
     $stmt->execute();
-    if ($stmt->rowCount() > 0){
+    if ($stmt->rowCount() > 0) {
 ?>
-        <div class="alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-            <h5><i class="icon fas fa-ban"></i> Gagal</h5>
-            Nama lokasi sama sudah ada
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h5><i class="icon fas-ban"></i> Gagal</h5>
+            Nama Lokasi Sudah Ada
         </div>
 <?php
+    } else {
+        $insertSQL = "INSERT INTO lokasi SET nama_lokasi = ?";
+        $stmt = $db->prepare($insertSQL);
+        $stmt->bindParam(1, $_POST['nama_lokasi']);
+        if ($stmt->execute()) {
+            $_SESSION['hasil'] = true;
+            $_SESSION['pesan'] = "Berhasil Simpan Data";
         } else {
+            $_SESSION['hasil'] = true;
+            $_SESSION['pesan'] = "Gagal Simpan Data";
         }
+        echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
     }
+}
 ?>
-
-<section class="content-header">
-
-<?php include_once "partials/scripts.php" ?>
-<section class="content-header">
+<div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -32,13 +38,21 @@ if (isset($_POST['button_create'])) {
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="?page=home">Home</a></li>
-                    <li class="breadcrumb-item"><a href="?page=lokasiread">Lokasi</a></li>
-                    <li class="breadcrumb-item active">Tambah Data</li>
+                    <li class="breadcrumb-item">
+                        <a href="?page=home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="?page=lokasiread"> Lokasi</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        Tambah Data
+                    </li>
                 </ol>
             </div>
         </div>
-</section>
+    </div>
+</div>
+
 <section class="content">
     <div class="card">
         <div class="card-header">
@@ -60,3 +74,5 @@ if (isset($_POST['button_create'])) {
         </div>
     </div>
 </section>
+
+<?php include_once "partials/scripts.php" ?>

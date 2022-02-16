@@ -16,6 +16,7 @@ session_start();
     <?php include "partials/control.php" ?>
     <?php include "partials/footer.php" ?>
   </div>
+
 </body>
 
 </html>
