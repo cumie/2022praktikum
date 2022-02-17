@@ -44,7 +44,7 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Data Rekap Gaji</h3>
-            <a href="?page=pengganjianrekap" class="btn btn-success btn-sm float-right">
+            <a href="?page=pengganjianrekap " class="btn btn-success btn-sm float-right">
                 <i class="fa fa-plus-circle"></i> Export PDF
             </a>
         </div>
