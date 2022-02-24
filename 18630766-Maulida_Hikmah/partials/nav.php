@@ -14,7 +14,7 @@
                 <a href="#" class="dropdown-item">
                     <i class="fas fa-key mr-2"></i> Ubah Password
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="../pages/admin/logout.php" class="dropdown-item">
                     <i class="fas fa-sign-out-alt mr-2"></i> Logout
                 </a>
             </div>
